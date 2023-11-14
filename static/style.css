@@ -1,0 +1,68 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.weather-forecast-form {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .weather-forecast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form {
+    margin: 0 auto;
+  }
+
+.weather-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.weather-card {
+    background: rgb(9,9,121);
+    background: linear-gradient(180deg, rgba(9,9,121,1) 0%, rgba(9,69,121,1) 41%, rgba(0,212,255,1) 100%);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 120px;
+}
+
+.weather-card i {
+    font-size: 48px;
+    color: #ffff;
+}
+
+.day {
+    font-weight: bold;
+    margin: 10px 0;
+    color:#fdbb2d;
+}
+
+.date {
+    margin: 5px 0;
+}
+
+.temperature {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
