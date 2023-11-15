@@ -39,8 +39,12 @@ async fn index() -> impl Responder {
                             <label for="city">Choose a city:</label>
                             <select name="city" id="city">
                                 <option value="Chicago">Chicago</option>
+                                <option value="Hollywood">Hollywood</option>
+                                <option value="Miami">Miami</option>
                                 <option value="New York">New York</option>
+                                <option value="Orlando">Orlando</option>
                                 <option value="Salt Lake City">Salt Lake City</option>
+                                <option value="Texas">Texas</option>
                                 <option value="Washington">Washington</option>
                             </select>
                             <br><br>
@@ -85,11 +89,25 @@ async fn get_weather(form: web::Form<FormData>) -> impl Responder {
         // You can add logic to dynamically populate the weather cards here
         let weather_html = format!(
             r#"
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="/static/style.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+                <title>Weather Forecast</title>
+            </head>
+            <body>
                 <div class="weather-card">
+                    <h2>Actual Weather</h2>
                     <i class="fas fa-sun"></i>
                     <p class="day">{} ({})</p>
                     <p class="temperature">{:.1}°C</p>
                 </div>
+            </body>
             "#,
             city, weather_data.weather[0].main, weather_data.main.temp
         );

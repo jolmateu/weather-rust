@@ -9,6 +9,11 @@ body {
     background-color: #f4f4f4;
 }
 
+h2 {
+    color: lightgrey;
+    font-size: 1.5rem;
+}
+
 .weather-forecast-form {
     border: 1px solid #ddd;
     border-radius: 8px;
