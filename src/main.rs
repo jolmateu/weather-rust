@@ -88,7 +88,7 @@ async fn get_weather(form: web::Form<FormData>) -> impl Responder {
             }
         });
 
-        // You can add logic to dynamically populate the weather cards here
+        // Logic to dynamically populate the weather cards
         let weather_html = format!(
             r#"
             <html lang="en">

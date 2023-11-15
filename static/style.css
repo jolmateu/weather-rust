@@ -41,7 +41,7 @@ h2 {
 
 .weather-card {
     background: rgb(9,9,121);
-    background: linear-gradient(180deg, rgba(9,9,121,1) 0%, rgba(9,69,121,1) 41%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(180deg, rgba(9,9,121,1) 0%, rgba(9,69,121,1) 35%, rgba(0,212,255,1) 100%);
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
