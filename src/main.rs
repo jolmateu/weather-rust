@@ -16,6 +16,7 @@ struct WeatherMain {
 #[derive(Deserialize)]
 struct WeatherCondition {
     main: String,
+    icon: String,
 }
 
 async fn index() -> impl Responder {
@@ -82,6 +83,7 @@ async fn get_weather(form: web::Form<FormData>) -> impl Responder {
                 main: WeatherMain { temp: 0.0 },
                 weather: vec![WeatherCondition {
                     main: "Unknown".to_string(),
+                    icon: "".to_string()
                 }],
             }
         });
@@ -103,13 +105,13 @@ async fn get_weather(form: web::Form<FormData>) -> impl Responder {
             <body>
                 <div class="weather-card">
                     <h2>Actual Weather</h2>
-                    <i class="fas fa-sun"></i>
+                    <img src="/static/images/{}.png" alt="Weather Icon" width="100" height="100">
                     <p class="day">{} ({})</p>
                     <p class="temperature">{:.1}°C</p>
                 </div>
             </body>
             "#,
-            city, weather_data.weather[0].main, weather_data.main.temp
+            weather_data.weather[0].icon, city, weather_data.weather[0].main, weather_data.main.temp
         );
 
         // Return the dynamically generated weather cards
